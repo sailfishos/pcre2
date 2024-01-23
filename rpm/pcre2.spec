@@ -48,11 +48,6 @@ URL:        https://www.pcre.org/
 Source0:    https://github.com/PCRE2Project/pcre2/releases/download/pcre2-%{version}/pcre2-%{version}.tar.bz2
 # Do no set RPATH if libdir is not /usr/lib
 Patch0:     0001-Fix-multilib.patch
-# Upstream commits:
-# https://github.com/PCRE2Project/pcre2/commit/794245ecc296724b52f5030831e58bedbffa2452
-# https://github.com/PCRE2Project/pcre2/commit/457c0e69a8f78d32bc7d4b6422cd01e396a4cf5d
-Patch1:     0002-match-also-restore-originally-unset-entries-in-recur.patch
-Patch2:     0003-Add-more-examples-fixed-by-300-update-ChangeLog.patch
 
 BuildRequires:  autoconf
 BuildRequires:  automake
