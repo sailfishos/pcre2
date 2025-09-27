@@ -14,7 +14,7 @@ Signed-off-by: Petr Písař <ppisar@redhat.com>
  1 file changed, 12 deletions(-)
 
 diff --git a/pcre2-config.in b/pcre2-config.in
-index bacea876e053518dc2ede6dfed727cdac1104cb3..a03aaabfc6c4c59690416623814fb4c6de0b2546 100644
+index 9639a907fd335c1ab87db65e60b70f91b6ed7f28..4c42265f2e0fcea81039fe2442f8413070ee7dca 100644
 --- a/pcre2-config.in
 +++ b/pcre2-config.in
 @@ -28,19 +28,7 @@ if test $# -eq 0; then
