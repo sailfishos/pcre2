@@ -8,7 +8,7 @@
 %bcond_with pcre2_enables_sealloc
 
 Name:       pcre2
-Version:    10.42
+Version:    10.46
 Release:    1
 Summary:    Perl-compatible regular expression library
 # the library:                          BSD with exceptions
@@ -44,15 +44,10 @@ Summary:    Perl-compatible regular expression library
 # test-driver:                          GPLv2+ with exception
 # testdata:                             Public Domain
 License:    BSD-3-Clause
-URL:        https://www.pcre.org/
-Source0:    https://github.com/PCRE2Project/pcre2/releases/download/pcre2-%{version}/pcre2-%{version}.tar.bz2
+URL:        https://github.com/sailfishos/pcre2
+Source0:    %{name}-%{version}.tar.bz2
 # Do no set RPATH if libdir is not /usr/lib
 Patch0:     0001-Fix-multilib.patch
-# Upstream commits:
-# https://github.com/PCRE2Project/pcre2/commit/794245ecc296724b52f5030831e58bedbffa2452
-# https://github.com/PCRE2Project/pcre2/commit/457c0e69a8f78d32bc7d4b6422cd01e396a4cf5d
-Patch1:     0002-match-also-restore-originally-unset-entries-in-recur.patch
-Patch2:     0003-Add-more-examples-fixed-by-300-update-ChangeLog.patch
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -193,16 +188,16 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}/pcre2
 %postun utf32 -p /sbin/ldconfig
 
 %files
-%license COPYING LICENCE
+%license COPYING LICENCE.md
 %{_libdir}/libpcre2-8.so.0*
 %{_libdir}/libpcre2-posix.so.3*
 
 %files utf16
-%license COPYING LICENCE
+%license COPYING LICENCE.md
 %{_libdir}/libpcre2-16.so.0*
 
 %files utf32
-%license COPYING LICENCE
+%license COPYING LICENCE.md
 %{_libdir}/libpcre2-32.so.0*
 
 %files devel
@@ -212,13 +207,12 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}/pcre2
 %{_bindir}/pcre2-config
 
 %files static
-%license COPYING LICENCE
+%license COPYING LICENCE.md
 %{_libdir}/*.a
 
 %files doc
-%defattr(-,root,root,-)
-%license COPYING LICENCE
-%doc AUTHORS ChangeLog NEWS
+%license COPYING LICENCE.md
+%doc AUTHORS.md ChangeLog NEWS
 %doc doc/*.txt doc/html
 %doc README HACKING ./src/pcre2demo.c
 %{_mandir}/man1/pcre2*
